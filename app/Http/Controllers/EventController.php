@@ -13,7 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        return EventResource::collection(Event::all())->resolve();
+        return EventResource::collection(Event::orderBy('started_at', 'DESC')->get())->resolve();
     }
 
     /**

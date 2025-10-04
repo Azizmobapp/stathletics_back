@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Champion\ChampionResource;
+use App\Http\Resources\Athlete\AthleteResource;
 use App\Http\Resources\Event\EventResource;
-use App\Models\Champion;
+use App\Models\Athlete;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
-class ChampionController extends Controller
+class AthleteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return ChampionResource::collection(Champion::all())->resolve();
-
+        return AthleteResource::collection(Athlete::orderBy('rate', 'DESC')->get())->resolve();
     }
 
     /**
@@ -30,16 +29,16 @@ class ChampionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Champion $champion)
+    public function show(Athlete $champion)
     {
-        return ChampionResource::make($champion)->resolve();
+        return AthleteResource::make($champion)->resolve();
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Champion $champion)
+    public function update(Request $request, Athlete $champion)
     {
         //
     }
@@ -47,7 +46,7 @@ class ChampionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Champion $champion)
+    public function destroy(Athlete $champion)
     {
         //
     }

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->dateTime('started_at');
             $table->text('title');
             $table->text('description')->nullable();
-            $table->string('location');
-            $table->string('img_path');
+            $table->string('location')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }
