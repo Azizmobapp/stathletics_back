@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'paths' => ['api/*', 'storage/*'],
+    'paths' => ['*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://stathletics.ru'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
