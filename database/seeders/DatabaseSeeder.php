@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'silver' => 2,
             'bronze' => 1,
             'rate' => 11,
-            'city' => 'Белгород',
+            'city' => 'Волгоград',
             'country' => null,
         ]);
 
