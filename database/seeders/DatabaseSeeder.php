@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Athlete::create([
+        Athlete::firstOrCreate([
             'first_name' => 'Игнат',
             'second_name' => 'Волков',
             'third_name' => null,
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'country' => null,
         ]);
 
-        Athlete::create([
+        Athlete::firstOrCreate([
             'first_name' => 'Данил',
             'second_name' => 'Слетин',
             'third_name' => null,
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'country' => null,
         ]);
 
-        Event::create([
+        Event::firstOrCreate([
             'started_at' => '2025-08-23 18:00:00',
             'title' => 'Онлайн чемпионат России 2025',
             'description' => null,
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'image_path' => 'images/event0.jpg',
         ]);
 
-        Event::create([
+        Event::firstOrCreate([
             'started_at' => '2025-11-29 18:00:00',
             'title' => 'Онлайн рекорды ССА',
             'description' => null,
@@ -58,12 +58,17 @@ class DatabaseSeeder extends Seeder
             'image_path' => 'images/event1.jpg',
         ]);
 
-        Event::create([
+        Event::firstOrCreate([
             'started_at' => '2026-03-25 18:00:00',
             'title' => 'Онлайн рекорды ССА 2',
             'description' => null,
             'location' => 'Онлайн',
             'image_path' => 'images/event2.jpg',
+        ]);
+
+
+        $this->call([
+            ElementSeeder::class
         ]);
 
     }
