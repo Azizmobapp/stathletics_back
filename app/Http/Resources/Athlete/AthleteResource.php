@@ -17,11 +17,12 @@ class AthleteResource extends JsonResource
         return [
             'name' => $this->name,
             'image_path' => $this->image_path,
-            'gold' => $this->gold,
-            'silver' => $this->silver,
-            'bronze' => $this->bronze,
+            'gold' => $this->gold ?? 0,
+            'silver' => $this->silver ?? 0,
+            'bronze' => $this->bronze ?? 0,
             'city' => $this->city,
             'total' => $this->total,
+            'img_url' => $this->img_url,
         ];
     }
 }

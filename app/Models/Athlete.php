@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Athlete extends Model
 {
@@ -14,5 +15,10 @@ class Athlete extends Model
     public function getNameAttribute(): string
     {
         return implode(' ', [$this->first_name, $this->second_name, $this->third_name]);
+    }
+
+    public function getImgUrlAttribute(): string
+    {
+        return Storage::disk('public')->url($this->img_path);
     }
 }

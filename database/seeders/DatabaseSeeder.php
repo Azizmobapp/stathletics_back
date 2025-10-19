@@ -16,32 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Athlete::firstOrCreate([
-            'first_name' => 'Игнат',
-            'second_name' => 'Волков',
-            'third_name' => null,
-            'img_path' => null,
-            'gold' => 4,
-            'silver' => 3,
-            'bronze' => 0,
-            'rate' => 15,
-            'city' => 'Белгород',
-            'country' => null,
-        ]);
-
-        Athlete::firstOrCreate([
-            'first_name' => 'Данил',
-            'second_name' => 'Слетин',
-            'third_name' => null,
-            'img_path' => null,
-            'gold' => 2,
-            'silver' => 2,
-            'bronze' => 1,
-            'rate' => 11,
-            'city' => 'Волгоград',
-            'country' => null,
-        ]);
-
         Event::firstOrCreate([
             'started_at' => '2025-08-23 18:00:00',
             'title' => 'Онлайн чемпионат России 2025',
@@ -68,7 +42,8 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
-            ElementSeeder::class
+            ElementSeeder::class,
+            AthleteSeeder::class,
         ]);
 
     }
