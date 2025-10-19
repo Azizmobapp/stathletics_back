@@ -23,6 +23,7 @@ class AthleteResource extends JsonResource
             'city' => $this->city,
             'total' => $this->total,
             'img_url' => $this->img_url,
+            'rate' => $this->rate,
         ];
     }
 }
