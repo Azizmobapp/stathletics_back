@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedInteger('gold')->nullable();
             $table->unsignedInteger('silver')->nullable();
             $table->unsignedInteger('bronze')->nullable();
+            $table->unsignedInteger('record')->nullable();
             $table->unsignedInteger('rate')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();

@@ -18,7 +18,7 @@ class AthleteImport implements ToCollection, WithHeadingRow, WithCalculatedFormu
     {
         foreach ($collection as $row) {
             if ($row->filter()->isNotEmpty()) {
-                $rate = $row['gold'] * 3 + $row['silver'] * 2 + $row['bronze'];
+                $rate = $row['gold'] * 3 + $row['silver'] * 2 + $row['bronze'] + $row['record'];
 
                 Athlete::firstOrCreate([
                     'first_name' => $row['first_name'],
@@ -29,6 +29,7 @@ class AthleteImport implements ToCollection, WithHeadingRow, WithCalculatedFormu
                     'gold' => $row['gold'],
                     'silver' => $row['silver'],
                     'bronze' => $row['bronze'],
+                    'record' => $row['record'],
                     'city' => $row['city'],
                     'country' => $row['country'],
                 ]);

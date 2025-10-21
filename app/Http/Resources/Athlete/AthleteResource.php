@@ -20,6 +20,7 @@ class AthleteResource extends JsonResource
             'gold' => $this->gold ?? 0,
             'silver' => $this->silver ?? 0,
             'bronze' => $this->bronze ?? 0,
+            'record' => $this->record ?? 0,
             'city' => $this->city,
             'total' => $this->total,
             'img_url' => $this->img_url,
